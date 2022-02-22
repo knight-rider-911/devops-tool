@@ -24,7 +24,7 @@ services:
     expose:
       - 9090
     ports:
-      - 9090:9090
+      - 9190:9090
     links:
       - alertmanager:alertmanager
     networks:
