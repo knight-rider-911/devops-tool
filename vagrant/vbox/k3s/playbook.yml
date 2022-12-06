@@ -1,0 +1,18 @@
+---
+- hosts: all
+  
+  tasks:
+  # - name: Add user for local use
+  #   become: yes    
+  #   user:
+  #    name: vagrant
+  #    groups: sudo
+  #    append: yes
+  - name: Run the equivalent of "apt-get update" as a separate step
+    become: yes
+    apt:
+      update_cache: yes
+  - name: Update all packages to the latest version
+    become: yes
+    apt:
+      upgrade: dist
